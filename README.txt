@@ -1,12 +1,5 @@
-﻿Assignment 1
-Fall 2016 --- CPSC 456 --- Professor Gofman --- Due 21 October 2016
-
-
-Team Members:
-Micah Geertson - micahgeertson@gmail.com
-Joshua Womack - jdwomack@csu.fullerton.edu
-
-
+Assignment 1
+Fall 2016 --- CPSC 456
 
 
 Virtual Machines:
@@ -15,30 +8,19 @@ Victims - VM1 (192.168.1.4) and VM2 (192.168.1.7)
 Credentials - Username: ubuntu        Password: 123456
 
 
-
-
 How To Execute:
 replicator_worm.py - From attacker machine (VM3), enter 
-python /tmp/replicator_worm.py in the command line, or
-double click the link on the Desktop.
-
+python /tmp/replicator_worm.py in the command line.
 
 passwordthief_worm.py - From attacker machine (VM3), enter 
-python /tmp/passwordthief_worm.py in the command line, or
-double click the link on the Desktop.
-
+python /tmp/passwordthief_worm.py in the command line.
 
 extorter_worm.py - From attacker machine (VM3), enter 
-python /tmp/extorter_worm.py in the command line, or 
-double click the link on the Desktop.
-
-
+python /tmp/extorter_worm.py in the command line.
 
 
 Extra Credit:
 We did not implement the extra credit.
-
-
 
 
 Special Notes:
